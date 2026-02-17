@@ -19,39 +19,41 @@ body {
 /* 2. CABECERA Y MENÚ CON IMAGEN */
 .header-con-imagen {
     display: flex;
-    align-items: center;        /* centra verticalmente el texto respecto a la imagen */
-    justify-content: space-between; /* texto a la izquierda, imagen a la derecha */
+    align-items: center;             /* centra verticalmente el texto respecto a la imagen */
+    justify-content: space-between;  /* texto a la izquierda, imagen a la derecha en escritorio */
     padding: 20px;
-    background: #1B263B;
+    background: #1B263B;             /* fondo azul oscuro del header */
     color: #F4F4F4;
-    gap: 20px;                  /* espacio entre texto y foto */
-    flex-wrap: wrap;             /* se pone vertical en móviles automáticamente */
+    gap: 20px;                       /* espacio entre texto y foto */
+    flex-wrap: wrap;                  /* permite que en móviles los elementos bajen */
+    border-radius: 12px;
 }
 
 .header-con-imagen .header-texto {
-    text-align: center;          /* centra el contenido de texto en su bloque */
-    flex: 1;                     /* ocupa todo el espacio disponible a la izquierda */
+    flex: 1;                          /* ocupa todo el espacio disponible a la izquierda */
+    text-align: center;                /* texto centrado en desktop */
 }
 
 .header-con-imagen .header-texto h1,
 .header-con-imagen .header-texto p {
-    margin: 0 0 10px 0;          /* elimina márgenes extras */
+    margin: 0 0 10px 0;               /* elimina márgenes extras */
 }
 
+/* Imagen del taller */
 .header-con-imagen .imagen-header img {
-    width: 200px;                /* tamaño fijo de la imagen */
+    width: 600px;                      /* tamaño base de la imagen en escritorio */
+    max-width: 40%;                     /* no crezca demasiado en pantallas grandes */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-
 /* MENÚ DE NAVEGACIÓN */
 nav ul {
     padding: 0;
-    list-style: none;
-    background: #444;
-    text-align: center;
+    list-style: none;                 /* elimina bullets */
+    background: #444;                 /* fondo oscuro del menú */
+    text-align: center;               /* centra los links */
     margin: 0;
 }
 
@@ -62,9 +64,9 @@ nav li {
 }
 
 nav a {
-    color: #fff;
+    color: #fff;                      /* letras blancas */
     text-decoration: none;
-    font-weight: bold;
+    font-weight: bold;                /* negrita */
     position: relative;
     transition: all 0.3s ease;
 }
@@ -77,7 +79,7 @@ nav a::after {
     bottom: -5px;
     width: 0;
     height: 2px;
-    background: #FFB300; /* acento naranja dorado */
+    background: #FFB300;             /* acento naranja dorado */
     transition: width 0.3s ease;
 }
 
@@ -91,21 +93,26 @@ nav a:focus::after {
     width: 100%;
 }
 
-/* AJUSTES MÓVIL para header con imagen */
+/* AJUSTES MÓVIL */
 @media (max-width: 600px) {
     .header-con-imagen {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column;       /* apila texto e imagen verticalmente */
+        align-items: center;           /* centra todo en móvil */
         text-align: center;
     }
 
     .header-con-imagen .imagen-header img {
-        width: 60%; /* reduce tamaño en móvil */
+        width: 60%;                    /* reduce tamaño en móvil */
         max-width: 250px;
-        margin-top: 15px;
+        margin-top: 15px;              /* separación del texto */
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+        border-bottom: 1px solid #555;
     }
 }
-
 
 /* 3. CONTENEDOR PRINCIPAL */
 main {
@@ -126,54 +133,30 @@ h2 {
     margin-top: 40px;
 }
 
-/* 5. BARRA DE CONFIANZA */
-.confianza {
+/* 5. BARRA DE CONFIANZA / POR QUÉ ELEGIRNOS */
+#confianza .contenedor-servicios {
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    background: #f9f9f9;
-    padding: 25px;
-    margin: 25px 0;
-    border: 1px solid #ddd;
-    border-radius: 12px;
+    margin-top: 20px;
+    list-style: none; /* evita bullets por herencia */
 }
 
-.item {
-    flex: 1 1 250px;   /* ancho base de 250px */
-    max-width: 280px;  /* evita que crezcan demasiado en escritorio */
-    text-align: center;
+#confianza .servicio-card {
+    flex: 1 1 300px;   /* ancho mínimo 300px */
     padding: 20px;
-    font-weight: bold;
-    border: 1px solid #eee;
-    background: white;
+    background: #f9f9f9;  /* opcional: gris suave */
+    border: 1px solid #ddd;
     border-radius: 10px;
     line-height: 1.5;
     transition: all 0.3s ease;
 }
 
-.item:hover {
+/* Hover para confianza */
+#confianza .servicio-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
-
-/* AJUSTES PARA MÓVIL */
-@media (max-width: 600px) {
-    .confianza {
-        flex-direction: column; /* apila los bloques */
-        align-items: center;
-        padding: 15px;          /* menos padding en móviles */
-        gap: 12px;
-    }
-
-    .item {
-        flex: 1 1 90%;           /* ocupa casi todo el ancho del móvil */
-        max-width: 90%;          /* limita para que no se salga */
-        padding: 15px;           /* menos padding */
-        font-size: 1rem;         /* aumenta proporcionalidad del texto */
-    }
-}
-
 
 /* 6. TARJETAS DE SERVICIOS */
 .contenedor-servicios {
@@ -201,7 +184,6 @@ h2 {
 
 /* 7. SECCIÓN CONTACTO */
 .info-taller {
-    /* Ahora solo contiene .datos, flex innecesario quitado */
     margin-top: 20px;
 }
 
@@ -234,28 +216,39 @@ footer {
 /* 9. AJUSTES PARA MÓVIL */
 @media (max-width: 600px) {
 
+    /* MENÚ */
     nav li {
         display: block;
         margin: 10px 0;
         border-bottom: 1px solid #555;
     }
 
+    nav ul {
+        text-align: left;   /* alinea los links a la izquierda */
+        padding-left: 15px; /* un poco de espacio desde el borde */
+    }
+
+    /* BARRA DE CONFIANZA */
     .confianza {
         flex-direction: column;
         align-items: center;
     }
 
+    /* TARJETAS DE SERVICIOS */
     .servicio-card {
         flex: 1 1 100%;
     }
 
+    /* INFO TALLER */
     /* .info-taller ya no necesita flex-direction, pero si quisieras mantener la consistencia: */
     /* .info-taller { flex-direction: column; } */
 
+    /* CABECERA */
     header h1 {
         font-size: 1.5rem;
     }
 
+    /* CONTENEDOR PRINCIPAL */
     main {
         margin: 15px;
         padding: 20px;
