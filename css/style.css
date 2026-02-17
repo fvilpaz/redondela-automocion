@@ -1,0 +1,245 @@
+/* 1. CONFIGURACIÓN GENERAL */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* 2. CABECERA Y MENÚ CON IMAGEN */
+.header-con-imagen {
+    display: flex;
+    align-items: center;        /* centra verticalmente el texto respecto a la imagen */
+    justify-content: space-between; /* texto a la izquierda, imagen a la derecha */
+    padding: 20px;
+    background: #1B263B;
+    color: #F4F4F4;
+    gap: 20px;                  /* espacio entre texto y foto */
+    flex-wrap: wrap;             /* se pone vertical en móviles automáticamente */
+}
+
+.header-con-imagen .header-texto {
+    text-align: center;          /* centra el contenido de texto en su bloque */
+    flex: 1;                     /* ocupa todo el espacio disponible a la izquierda */
+}
+
+.header-con-imagen .header-texto h1,
+.header-con-imagen .header-texto p {
+    margin: 0 0 10px 0;          /* elimina márgenes extras */
+}
+
+.header-con-imagen .imagen-header img {
+    width: 200px;                /* tamaño fijo de la imagen */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+/* MENÚ DE NAVEGACIÓN */
+nav ul {
+    padding: 0;
+    list-style: none;
+    background: #444;
+    text-align: center;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Línea animada moderna */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #FFB300; /* acento naranja dorado */
+    transition: width 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #FFB300;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+    width: 100%;
+}
+
+/* AJUSTES MÓVIL para header con imagen */
+@media (max-width: 600px) {
+    .header-con-imagen {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-con-imagen .imagen-header img {
+        width: 60%; /* reduce tamaño en móvil */
+        max-width: 250px;
+        margin-top: 15px;
+    }
+}
+
+
+/* 3. CONTENEDOR PRINCIPAL */
+main {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #F8F9FA;
+    color: #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 12px;
+}
+
+/* 4. TÍTULOS Y SECCIONES */
+h2 {
+    color: #333;
+    border-left: 5px solid #ff9900;
+    padding-left: 15px;
+    margin-top: 40px;
+}
+
+/* 5. BARRA DE CONFIANZA */
+.confianza {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    background: #f9f9f9;
+    padding: 25px;
+    margin: 25px 0;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.item {
+    flex: 1 1 250px;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    border: 1px solid #eee;
+    background: white;
+    border-radius: 10px;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* 6. TARJETAS DE SERVICIOS */
+.contenedor-servicios {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.servicio-card {
+    flex: 1 1 300px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    line-height: 1.5;
+}
+
+.servicio-card:hover {
+    border-color: #ff9900;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+/* 7. SECCIÓN CONTACTO */
+.info-taller {
+    /* Ahora solo contiene .datos, flex innecesario quitado */
+    margin-top: 20px;
+}
+
+.mapa-pequeno {
+    width: 320px;
+    max-width: 100%;
+    margin: 15px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.mapa-pequeno iframe {
+    display: block;
+}
+
+/* Horario separado */
+.horario-seccion {
+    margin-top: 30px;
+}
+
+/* 8. FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 9. AJUSTES PARA MÓVIL */
+@media (max-width: 600px) {
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+        border-bottom: 1px solid #555;
+    }
+
+    .confianza {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio-card {
+        flex: 1 1 100%;
+    }
+
+    /* .info-taller ya no necesita flex-direction, pero si quisieras mantener la consistencia: */
+    /* .info-taller { flex-direction: column; } */
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        margin: 15px;
+        padding: 20px;
+    }
+}
