@@ -131,7 +131,6 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
     gap: 15px;
     background: #f9f9f9;
     padding: 25px;
@@ -141,7 +140,8 @@ h2 {
 }
 
 .item {
-    flex: 1 1 250px;
+    flex: 1 1 250px;   /* ancho base de 250px */
+    max-width: 280px;  /* evita que crezcan demasiado en escritorio */
     text-align: center;
     padding: 20px;
     font-weight: bold;
@@ -156,6 +156,24 @@ h2 {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+
+/* AJUSTES PARA MÓVIL */
+@media (max-width: 600px) {
+    .confianza {
+        flex-direction: column; /* apila los bloques */
+        align-items: center;
+        padding: 15px;          /* menos padding en móviles */
+        gap: 12px;
+    }
+
+    .item {
+        flex: 1 1 90%;           /* ocupa casi todo el ancho del móvil */
+        max-width: 90%;          /* limita para que no se salga */
+        padding: 15px;           /* menos padding */
+        font-size: 1rem;         /* aumenta proporcionalidad del texto */
+    }
+}
+
 
 /* 6. TARJETAS DE SERVICIOS */
 .contenedor-servicios {
