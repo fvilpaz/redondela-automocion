@@ -1,83 +1,67 @@
-# redondela-automocion
+# 🚗 Redondela Automoción · Digital Business Hub
 
-Web oficial del taller **Redondela Automoción**, especializado en mecánica general, frenos y pre-ITV en Redondela.
+Professional web platform for a specialized automotive workshop in Redondela.  
+Designed to bridge the gap between traditional mechanical services and modern digital accessibility.
 
----
-
-## 📌 Descripción
-
-Este proyecto es la página web corporativa del taller **Redondela Automoción**, diseñada para mostrar los servicios, información de contacto y horario de atención.  
-Incluye secciones de:
-
-- Bienvenida / descripción del taller
-- Confianza y experiencia
-- Servicios ofrecidos
-- Contacto y horario
-- Mapa de ubicación
-
-El diseño está pensado para ser **responsive**, moderno y fácil de navegar desde cualquier dispositivo.
+- 🛠️ [View Live demo](https://fvilpaz.github.io/redondela-automocion/)
+- 📂 [Repository](https://github.com/fvilpaz/redondela-automocion)
 
 ---
 
-## 🛠 Tecnologías utilizadas
+## 📌 Project Overview
 
-- **HTML5** – Estructura del sitio web
-- **CSS3** – Estilos y diseño responsive
-- **Flexbox** – Distribución de los elementos en cabecera y secciones
-- **Google Maps Embed** – Ubicación del taller
-- **Git & GitHub** – Control de versiones y despliegue
+This project serves as the official digital storefront for Redondela Automoción. Beyond a simple landing page, it is engineered to prioritize user trust and local SEO through a clean, mobile-first interface.
+
+### Key Features:
+* Conversion Oriented: Strategic placement of Call to Action buttons.
+* Service Catalog: Detailed breakdown of mechanical services.
+* Trust Signals: Integration of social proof and Google Maps.
+* Fully Responsive: Optimized for all devices.
 
 ---
 
-## 📁 Estructura del proyecto
+## 🛠 Tech Stack
 
-```
+* HTML5 / CSS3: Semantic structure and modern styling.
+* Flexbox Layout: For a robust, fluid grid system.
+* Google Maps API Integration: For precise customer navigation.
+* Git & GitHub: Version control and automated deployment.
+
+---
+
+## 📁 Project Structure
+
 redondela-automocion/
 ├── index.html
 ├── css/
 │   └── style.css
-├── images/ (opcional: imágenes del taller)
+├── images/
 └── README.md
-```
 
 ---
 
-## 🚀 Cómo ver el proyecto localmente
+## 🚀 Local Setup
 
-1. Clonar el repositorio:
-   ```bash
-    git clone https://github.com/fvilpaz/redondela-automocion.git
-   ```
-2. Abrir `index.html` en tu navegador web favorito.
+1. Clone the repo:
+   git clone https://github.com/fvilpaz/redondela-automocion.git
 
----
-
-## 🌐 Versión online
-```
-  https://fvilpaz.github.io/redondela-automocion/
-```
+2. Launch:
+   Simply open index.html in your preferred browser.
 
 ---
 
-## 📞 Contacto
+## ⚡ Future Roadmap
 
-- Dirección: Camiño do Coto, 48, 36693 Redondela  
-- Teléfono: [986 40 14 11](tel:986401411)  
-- Instagram: [@redondelaautomocion](https://www.instagram.com/redondelaautomocion)  
-
----
-
-## ⚡ Mejoras futuras
-
-- Añadir galería de fotos del taller
-- Posibilidad de venta de recambios 
-- Pedir cita en taller
-- Formularios de contacto funcionales
-- Animaciones suaves en secciones
-- Optimización SEO básica
+- [ ] Interactive Booking system.
+- [ ] E-commerce Lite for parts.
+- [ ] Advanced SEO (Schema.org).
+- [ ] Smooth scroll animations.
 
 ---
 
-## 📝 Licencia
+## 📝 License & Contact
 
-Este proyecto es **propiedad de Redondela Automoción** y está destinado para fines informativos y demostrativos.
+* Instagram: @redondelaautomocion
+* Location: Camiño do Coto, 48, 36693 Redondela
+
+This project is developed for Redondela Automoción as a professional digital solution.
