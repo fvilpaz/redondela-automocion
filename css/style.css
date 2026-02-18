@@ -22,7 +22,7 @@ body {
     align-items: center;             /* centra verticalmente el texto respecto a la imagen */
     justify-content: space-between;  /* texto a la izquierda, imagen a la derecha en escritorio */
     padding: 20px;
-    background: #1B263B;             /* fondo azul oscuro del header */
+    background: #072968;             /* fondo azul del header */
     color: #F4F4F4;
     gap: 20px;                       /* espacio entre texto y foto */
     flex-wrap: wrap;                  /* permite que en móviles los elementos bajen */
@@ -30,7 +30,7 @@ body {
 }
 
 .header-con-imagen .header-texto {
-    flex: 1;                          /* ocupa todo el espacio disponible a la izquierda */
+    flex: 0 1 auto;                          /* ocupa todo el espacio disponible a la izquierda */
     text-align: center;                /* texto centrado en desktop */
 }
 
@@ -40,9 +40,13 @@ body {
 }
 
 /* Imagen del taller */
+.header-con-imagen .imagen-header {
+    flex-shrink: 0;  /* evita que la imagen se comprima raro */
+}
+
 .header-con-imagen .imagen-header img {
-    width: 600px;                      /* tamaño base de la imagen en escritorio */
-    max-width: 40%;                     /* no crezca demasiado en pantallas grandes */
+    width: 600px;        /* tamaño base real en escritorio */
+    max-width: 40%;      /* nunca más del 40% del header */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -50,16 +54,18 @@ body {
 
 /* MENÚ DE NAVEGACIÓN */
 nav ul {
-    padding: 0;
+    padding: 0 0 10px 0;
+                    /* espacio arriba y abajo del menú */
     list-style: none;                 /* elimina bullets */
-    background: #444;                 /* fondo oscuro del menú */
+    background: #FFB300;                 /* fondo oscuro del menú */
     text-align: center;               /* centra los links */
-    margin: 0;
+    margin: 10px auto 0 auto;        /* margen superior e inferior */
+    border-radius: 12px;
 }
 
 nav li {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 20px;
     padding: 10px 0;
 }
 
@@ -79,13 +85,13 @@ nav a::after {
     bottom: -5px;
     width: 0;
     height: 2px;
-    background: #FFB300;             /* acento naranja dorado */
+    background: #131bac;             /* acento naranja dorado */
     transition: width 0.3s ease;
 }
 
 nav a:hover,
 nav a:focus {
-    color: #FFB300;
+    color: #131bac;
 }
 
 nav a:hover::after,
@@ -105,12 +111,6 @@ nav a:focus::after {
         width: 60%;                    /* reduce tamaño en móvil */
         max-width: 250px;
         margin-top: 15px;              /* separación del texto */
-    }
-
-    nav li {
-        display: block;
-        margin: 10px 0;
-        border-bottom: 1px solid #555;
     }
 }
 
@@ -205,6 +205,88 @@ h2 {
     margin-top: 30px;
 }
 
+/* 7.5 BOTONES DE CONTACTO RÁPIDO */
+.contenedor-contacto {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    align-items: stretch; 
+}
+
+
+.tarjeta-contacto,
+.info-extra {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.mapa-wrapper {
+    flex: 1;                 /* ocupa la otra mitad */
+}
+
+@media (max-width: 768px) {
+
+    .contenedor-contacto {
+        flex-direction: column;   /* se ponen uno debajo del otro */
+    }
+
+    .tarjeta-contacto,
+    .info-extra {
+        width: 100%;              /* ocupan todo el ancho */
+    }
+
+}
+
+
+
+/* Estilo de los botones */
+.btn-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-contacto span {
+    margin-right: 12px;
+    font-size: 1.4rem;
+}
+
+.btn-contacto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    filter: brightness(1.1); /* Brillo al pasar el ratón */
+}
+
+/* Colores personalizados para el taller */
+.btn-llamada { background-color: #1B263B; } /* El azul oscuro de tu header */
+.btn-whatsapp { background-color: #25d366; } /* Verde WhatsApp */
+.btn-email { background-color: #FFB300; color: #1B263B; } /* El naranja de tu menú */
+.btn-google {background-color: #4285F4;   /* azul Google */}
+.btn-mapa { background-color: #ff4e4e; }     /* Azul Google */
+
+/* Contenedor del mapa para que crezca */
+.info-extra {
+    flex: 1 1 300px;
+}
+
+.mapa-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid #ddd;
+}
+
 /* 8. FOOTER */
 footer {
     text-align: center;
@@ -220,7 +302,7 @@ footer {
     nav li {
         display: block;
         margin: 10px 0;
-        border-bottom: 1px solid #555;
+        border-bottom: 2px solid #fff;
     }
 
     nav ul {
