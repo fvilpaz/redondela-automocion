@@ -29,13 +29,15 @@ This project serves as the official digital storefront for Redondela Automoción
 
 ---
 
+
 ## 📁 Project Structure
 
+```text
 redondela-automocion/
-├── index.html
-├── css/
+├── index.html       # Main entry point & semantic structure
+├── css/             # Stylesheets (Mobile-first approach)
 │   └── style.css
-├── images/
+├── images/          # Optimized assets and brand identity
 └── README.md
 
 ---
