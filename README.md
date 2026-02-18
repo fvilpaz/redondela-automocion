@@ -59,17 +59,6 @@ redondela-automocion/
 
 ---
 
-## 🎨 Diseño y colores
-
-- Cabecera / menú: Azul oscuro `#1B263B`
-- Texto principal: Blanco / gris claro `#F4F4F4`
-- Fondo principal: Gris muy claro `#F8F9FA`
-- Bordes / líneas: Gris neutro `#DDE1E6`
-- Acentos / hover: Naranja `#FFB300`
-- Iconos y detalles: Azul brillante `#00A6FB`
-
----
-
 ## 📞 Contacto
 
 - Dirección: Camiño do Coto, 48, 36693 Redondela  
@@ -81,6 +70,8 @@ redondela-automocion/
 ## ⚡ Mejoras futuras
 
 - Añadir galería de fotos del taller
+- Posibilidad de venta de recambios 
+- Pedir cita en taller
 - Formularios de contacto funcionales
 - Animaciones suaves en secciones
 - Optimización SEO básica
